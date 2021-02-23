@@ -136,12 +136,20 @@ Liskov Substitution Principle states:
 Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T.
 This means that every subclass or derived class should be substitutable for their base or parent class.
 
+Take the example of the Statistics class, which inherits from Calculator. In order to follow this rule, everywhere that the Statistics calculator is called or used, it must be suitable for use by the Calculator class and all of its properties as well. 
+
 **4. I – Interface Segregation Principle**
 Interface Segregation Principle states: A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use.
+
+This basically means that whenever you implement an interface you need to have a reason to use every single attribute defined in that interface, otherwise it does not make sense to use the interface. In JavaScript, there is no such thing as interfaces like there is in other object-oriented languages. However this principle can still be applicable. JavaScript can use this principle instead through classes and inheritance.  
 
 **5. D – Dependency Inversion Principle** 
 Dependency inversion principle states:
 Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend on the low-level module, but they should depend on abstractions.
+
+````
+let calculation = Calculation.Create(a,b,Product);
+````
 
 
 [![Coverage Status](https://coveralls.io/repos/github/tas56/is219calculator/badge.svg?branch=master)](https://coveralls.io/github/tas56/is219calculator?branch=master)
