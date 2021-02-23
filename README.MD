@@ -6,11 +6,11 @@ Some basic terminologies of object-oriented design include:
 
 **Class:** The model for what an object can do. I like to think of it as the blueprint/rules of an object.
 
-**Method/Function:** 
+**Method/Function:** a group of statements that together perform a task.
 
-**Object:** the instance of a class
+**Object:** the instance of a class.
 
-**Instance:**
+**Instance:** a concrete occurrence of any object, existing usually during the runtime of a computer program
 
 Many languages use the OOP architecture for their design. For the purpose of this tutorial we will be using JavaScript, however these concepts apply across many different programming languages.
 
@@ -28,6 +28,8 @@ This means that object keeps its own personal data/state private from within tha
     }
 
 ````
+
+This repo has many demonstrations of encapsulation, however in Calculation.js you will find this method which is the most obvious encapsulation. The *GetResults()* method returns the results of an operation. Other classes can access the results of an operation through this method.
 
  
 
@@ -50,6 +52,8 @@ class Statistics extends Calculator {
 
 ````
 
+In the above code you will see two classes that use the *extends* keyword. This keyword litterally means that it is extending from the parent class. So, Calculator is an extension of Calcualtion and Statistics is an extension of Calcualator. Notice the hierarchy. Calculator will inherit and have use of all of the properties of Calcualtion and Statistics will inherit all of the properties of Calculator AND Calculation. The Calculator class holds basic arithmetic operations that any statistics calculator may need to use. So it is best to reuse that code by extending the class.
+
 
 **3. Abstraction**
 
@@ -68,6 +72,8 @@ An abstraction in OOP is a way of hiding the implementation details and showing 
     }
 
 ````
+
+The *Calculations* array stores an array of inputed operations. The *AddCalculations()* method is how calculations are pushed into the array. Notice that everytime an operation is performed, the *AddCalculations()* method is called. This is an example of abstraction because the code simply does the job but whatever other class calls an operation they do not also need to add the calculation to the array, it simply does it for you. 
 
 **4. Polymorphism**
 
