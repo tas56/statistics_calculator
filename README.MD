@@ -105,12 +105,43 @@ class Calculation {
 The Create method in this example makes for one and only one place in a program that creates the calculation object. This methods only responsibility is to instatiate new calculation objects
 
 **2. O – Open/Closed Principle**
+Objects or entities should be open for extension but closed for modification.
+This means that a class should be open for extension but closed for modifiation.
+Let's revisit the calculation class for this example.
+
+````
+class Calculation {
+
+    constructor(a,b,op) {
+        this.a = a;
+        this.b = b;
+        this.op = op;
+    }
+
+    static Create(a,b,op){
+       return new Calculation(a,b,op);
+    }
+
+    GetResults() {
+        return this.op(this.a,this.b)
+    }
+}
+````
+
+One way this could have been implemented is by using if/else or switch statements to calculate and return the results of a called operation. However, that violates the open/closed principle because when new operations are added you would have had to go into the function and add another statement. What this does instead is collects the operation information when a new operation is called so it can then call that operation. The code can then easily be extended and does not have to be modified.
 
 **3. L – Liskov’s Substitution Principle**
 
+Liskov Substitution Principle states:
+Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T.
+This means that every subclass or derived class should be substitutable for their base or parent class.
+
 **4. I – Interface Segregation Principle**
+Interface Segregation Principle states: A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use.
 
 **5. D – Dependency Inversion Principle** 
+Dependency inversion principle states:
+Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend on the low-level module, but they should depend on abstractions.
 
 
 [![Coverage Status](https://coveralls.io/repos/github/tas56/is219calculator/badge.svg?branch=master)](https://coveralls.io/github/tas56/is219calculator?branch=master)
