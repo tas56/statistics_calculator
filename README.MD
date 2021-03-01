@@ -151,6 +151,49 @@ Entities must depend on abstractions, not on concretions. It states that the hig
 let calculation = Calculation.Create(a,b,Product);
 ````
 
+# Design Patterns
+
+**Behavioural**
+_Chain of Responsibility Pattern_
+
+This is a behavioural design pattern that provides a chain of loosely coupled objects. Each of these objects can choose to act on or handle the request of the client.
+
+For example, we can use this pattern to create a class that stores the cumulative sum of mathematical operations that are performed by a calculator.
+
+We create a new CumulativeSum class. When called on, this class will initialize a sum of zero. It's add method will add the results to the cumulated sum and the getCumulativeSum will return those results.
+
+````
+class CumulativeSum {
+
+    constructor(intialValue = 0) {
+        this.sum = intialValue;
+    }
+
+    add(value) {
+        this.sum += value;
+        return this;
+    }
+
+    getCumulativeSum() {
+        return this.sum;
+    }
+}
+````
+
+This CumulativeSum class can then be used in the calculator class by creating a new instance for each new calculator instance. Each operation then calls the add() method and passes the results of the calculation, which then adds those results to the cumulative sum.
+
+````
+    static cumulativeSum = new CumulativeSum();
+
+    static Sum(a,b){
+        let calculation = this.Create(a,b,Sum);
+        this.AddCalculation(calculation);
+        this.cumulativeSum.add(calculation.GetResults());
+        return calculation;
+    }
+
+````
+
 
 [![Coverage Status](https://coveralls.io/repos/github/tas56/is219calculator/badge.svg?branch=master)](https://coveralls.io/github/tas56/is219calculator?branch=master)
 [![Build Status](https://travis-ci.org/tas56/is219calculator.svg?branch=master)](https://travis-ci.org/tas56/is219calculator)
