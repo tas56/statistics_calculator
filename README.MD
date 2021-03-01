@@ -194,6 +194,42 @@ This CumulativeSum class can then be used in the calculator class by creating a 
 
 ````
 
+**Structural Pattern**
+_Decorator Pattern_
+
+This is a structural design pattern that focuses on the ability to add behaviour or functionalities to existing classes dynamically.
+
+For example, we will take a look at the calculation.js class. This class is implementing a decorator design pattern because ass you can see it is dynamically adding the operation functionality to the methods of the class. While each operation is not included in a class, the mathematical operations are passed dynamically to the functions. The behaviour of this class changes based on the operation that is passed to it.
+
+````
+class Calculation {
+
+    constructor(a,b,op) {
+        this.a = a;
+        this.b = b;
+        this.op = op;
+    }
+
+    static Create(a,b,op){
+       return new Calculation(a,b,op);
+    }
+
+    GetResults() {
+        return this.op(this.a,this.b)
+    }
+}
+
+````
+
+**Creational Pattern**
+_Builder Pattern_
+
+````
+
+````
+
+
+
 
 [![Coverage Status](https://coveralls.io/repos/github/tas56/is219calculator/badge.svg?branch=master)](https://coveralls.io/github/tas56/is219calculator?branch=master)
 [![Build Status](https://travis-ci.org/tas56/is219calculator.svg?branch=master)](https://travis-ci.org/tas56/is219calculator)
