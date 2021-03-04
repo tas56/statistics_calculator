@@ -6,11 +6,9 @@ class Calculation {
         this.op = op;
     }
 
-
     static Create(op, a = null,b = null){
        return new Calculation(op,a,b);
     }
-
 
     GetResults() {
         if(Array.isArray(this.a)){
