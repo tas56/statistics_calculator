@@ -14,32 +14,32 @@ class Calculator extends Calculation {
         Calculator.Calculations.push(calculation);
     }
     static Sum(a,b){
-        let calculation = this.Create(a,b,Sum);
+        let calculation = this.Create(Sum,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
     static Difference(a,b){
-        let calculation = this.Create(a,b,Difference);
+        let calculation = this.Create(Difference,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
     static Product(a,b){
-        let calculation = this.Create(a,b,Product);
+        let calculation = this.Create(Product,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
     static Quotient(a,b){
-        let calculation = this.Create(a,b,Quotient);
+        let calculation = this.Create(Quotient,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
     static Exponentiation(a,b){
-        let calculation = this.Create(a,b,Exponentiation);
+        let calculation = this.Create(Exponentiation,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
     static Root(a,b){
-        let calculation = this.Create(a,b,Root);
+        let calculation = this.Create(Root,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
