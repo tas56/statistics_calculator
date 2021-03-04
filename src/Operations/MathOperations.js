@@ -1,7 +1,9 @@
 module.exports = class MathOperations {
 
-    static sum(a,b){
-        return a + b;
+    static sum(a,b = null){
+        if(Array.isArray(a)){
+            return a.reduce((a, b) => a + b);
+        } else return a + b;
     }
     static difference(a,b){
         return a - b;
@@ -18,5 +20,6 @@ module.exports = class MathOperations {
     static root(a, b){
         return Math.pow(a, 1/b);
     }
+
 
 }

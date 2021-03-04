@@ -1,20 +1,44 @@
+// BUILDER PATTERN
+// class Calculation {
+//
+//     constructor(op, a=null,b=null) {
+//         this.a = a;
+//         this.b = b;
+//         this.op = op;
+//     }
+//
+//     static create(op, a = null,b = null){
+//        return new Calculation(op,a,b);
+//     }
+//
+//     getResults() {
+//         if(Array.isArray(this.a)){
+//             return this.op(this.a)
+//         }
+//         return this.op(this.a,this.b)
+//     }
+//
+// }
+
 class Calculation {
 
-    constructor(op, a=null,b=null) {
+    constructor(op, {a, b, arr} = { }) {
+        this.op = op;
         this.a = a;
         this.b = b;
-        this.op = op;
+        this.arr = arr;
     }
 
-    static Create(op, a = null,b = null){
-       return new Calculation(op,a,b);
+    static create(op, {a, b, arr} = { }) {
+        return new Calculation(op, {a: a, b: b, arr: arr});
     }
 
-    GetResults() {
-        if(Array.isArray(this.a)){
-            return this.op(this.a)
-        }
-        return this.op(this.a,this.b)
+    getResults() {
+        if(this.arr != null){
+            return this.op(this.arr)
+        } else if (this.a && this.b != null){
+            return this.op(this.a,this.b);
+        } else throw("ERROR: calculation cannot be performed, must pass 2 numbers or an array.");
     }
 
 }

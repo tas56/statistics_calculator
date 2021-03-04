@@ -1,41 +1,49 @@
 const Calculation = require('../src/Models/Calculation');
-const op =require('./Operations/MathOperations');
+const Op = require('./Operations/MathOperations');
+const CumulativeSum = require('./Cumulative');
 
 class Calculator extends Calculation {
 
-    static Calculations = [];
+    static calculations = [];
+    static cumulativeSum = new CumulativeSum();
 
-    static AddCalculation(calculation){
-        Calculator.Calculations.push(calculation);
+    static addCalculation(calculation){
+        Calculator.calculations.push(calculation);
     }
-    static Sum(a,b){
-        let calculation = this.Create(op.sum,a,b);
-        this.AddCalculation(calculation);
+    static sum(a, b){
+        let calculation = this.create(Op.sum,{a:a,b:b});
+        this.addCalculation(calculation);
+        this.cumulativeSum.add(calculation.getResults());
         return calculation;
     }
-    static Difference(a,b){
-        let calculation = this.Create(op.difference,a,b);
-        this.AddCalculation(calculation);
+    static difference(a, b){
+        let calculation = this.create(Op.difference,{a:a,b:b});
+        this.addCalculation(calculation);
+        this.cumulativeSum.add(calculation.getResults());
         return calculation;
     }
-    static Product(a,b){
-        let calculation = this.Create(op.product,a,b);
-        this.AddCalculation(calculation);
+    static product(a, b){
+        let calculation = this.create(Op.product,{a:a,b:b});
+        this.addCalculation(calculation);
+        this.cumulativeSum.add(calculation.getResults());
         return calculation;
     }
-    static Quotient(a,b){
-        let calculation = this.Create(op.quotient,a,b);
-        this.AddCalculation(calculation);
+    static quotient(a, b){
+        let calculation = this.create(Op.quotient,{a:a,b:b});
+        this.addCalculation(calculation);
+        this.cumulativeSum.add(calculation.getResults());
         return calculation;
     }
-    static Exponentiation(a,b){
-        let calculation = this.Create(op.power,a,b);
-        this.AddCalculation(calculation);
+    static exponentiation(a, b){
+        let calculation = this.create(Op.power,{a:a,b:b});
+        this.addCalculation(calculation);
+        this.cumulativeSum.add(calculation.getResults());
         return calculation;
     }
-    static Root(a,b){
-        let calculation = this.Create(op.root,a,b);
-        this.AddCalculation(calculation);
+    static root(a, b){
+        let calculation = this.create(Op.root,{a:a,b:b});
+        this.addCalculation(calculation);
+        this.cumulativeSum.add(calculation.getResults());
         return calculation;
     }
 

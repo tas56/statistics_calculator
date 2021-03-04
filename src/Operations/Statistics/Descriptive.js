@@ -51,14 +51,16 @@ module.exports = class Descriptive {
             let squaredAvg = (arr.reduce((a, b) => a + b, 0) / n) ** 2;
             return ((sumSquares / n) - squaredAvg) * (n / (n-1));
         } else {
-            let mean = this.mean(arr);
+            let mean = Descriptive.mean(arr);
             return arr.reduce((a, b) => a + (b-mean)**2, 0) / n;
         }
     }
     // Calculates the Standard Deviation
     static standardDeviation(arr){
-        return Math.sqrt(this.variance(arr));
+        return Math.sqrt(Descriptive.variance(arr));
     }
+    // Calculates the Quartiles
+
 
 
 
