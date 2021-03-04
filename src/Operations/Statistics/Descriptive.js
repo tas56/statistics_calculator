@@ -56,6 +56,9 @@ module.exports = class Descriptive {
         }
     }
     // Calculates the Standard Deviation
+    static standardDeviation(arr){
+        return Math.sqrt(this.variance(arr));
+    }
 
 
 

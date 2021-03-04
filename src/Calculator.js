@@ -1,10 +1,5 @@
 const Calculation = require('../src/Models/Calculation');
-const Sum = require('../src/Operations/Sum');
-const Difference = require('../src/Operations/Difference');
-const Product = require('../src/Operations/Product');
-const Quotient = require('../src/Operations/Quotient');
-const Exponentiation = require('../src/Operations/Exponentiation');
-const Root = require('../src/Operations/Root');
+const op =require('./Operations/MathOperations');
 
 class Calculator extends Calculation {
 
@@ -14,32 +9,32 @@ class Calculator extends Calculation {
         Calculator.Calculations.push(calculation);
     }
     static Sum(a,b){
-        let calculation = this.Create(Sum,a,b);
+        let calculation = this.Create(op.sum,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
     static Difference(a,b){
-        let calculation = this.Create(Difference,a,b);
+        let calculation = this.Create(op.difference,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
     static Product(a,b){
-        let calculation = this.Create(Product,a,b);
+        let calculation = this.Create(op.product,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
     static Quotient(a,b){
-        let calculation = this.Create(Quotient,a,b);
+        let calculation = this.Create(op.quotient,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
     static Exponentiation(a,b){
-        let calculation = this.Create(Exponentiation,a,b);
+        let calculation = this.Create(op.power,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
     static Root(a,b){
-        let calculation = this.Create(Root,a,b);
+        let calculation = this.Create(op.root,a,b);
         this.AddCalculation(calculation);
         return calculation;
     }
