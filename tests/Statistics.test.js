@@ -21,3 +21,7 @@ test('Statistics standard deviation function', () => {
     let arr = [1,2,3,4,5];
     expect(Math.round(Statistics.standardDeviation(arr).getResults() * 10)/10).toBe(1.6);
 });
+test('Statistics skewness function', () => {
+    let arr = [1,2,3,4,5];
+    expect(Math.round(Statistics.standardDeviation(arr).getResults() * 10)/10).toBe(1.6);
+});

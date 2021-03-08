@@ -17,5 +17,8 @@ module.exports = class CumulativeSum {
     getCumulativeSum() {
         return this.sum;
     }
-}
 
+    clearCumulativeSum(){
+        this.sum = 0;
+    }
+}

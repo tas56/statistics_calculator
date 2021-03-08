@@ -61,6 +61,14 @@ module.exports = class Descriptive {
     }
     // Calculates the Quartiles
 
+    // Calculates the skewness
+    static skewness(arr){
+        let mean = Descriptive.mean(arr);
+        let cubedDev = arr.reduce((a, b) => a + (b-mean) ** 3, 0);
+        let stdDev = Descriptive.standardDeviation(arr, false);
+        return (cubedDev / arr.length) / (stdDev ** 3);
+    }
+
 
 
 
