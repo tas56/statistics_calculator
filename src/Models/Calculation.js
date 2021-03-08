@@ -38,6 +38,7 @@ module.exports = class Calculation {
         return new Calculation(op, {a: a, b: b, arr: arr});
     }
 
+
     getResults() {
         if(this.arr != null){
             return this.op(this.arr)
@@ -46,30 +47,4 @@ module.exports = class Calculation {
         } else throw("ERROR: calculation cannot be performed, must pass 2 numbers or an array.");
     }
 
-}
-
-
-
-// Null Object Pattern
-// Makes it so you never have to check if data is null anywhere else in code
-// Reduces redundancy and the chance of missing checks in larger code bases
-// In Null Object pattern, a null object replaces check of NULL object instance.
-// Instead of putting if check for a null value, Null Object reflects a do
-//  nothing relationship. Such Null object can also be used to provide
-// default behaviour in case data is not available.
-
-class NullData {
-
-    constructor() {
-        this.a = null;
-        this.b = null;
-        this.arr = null;
-    }
-
-    getData(){
-        if((this.a == null && this.b == null) || (this.arr == null)){
-            return new NullData();
-        }
-
-    }
 }
