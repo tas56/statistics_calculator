@@ -1,7 +1,7 @@
-#Statistics Project
-##Team Members: Thomas Semiz and Michelle Nunez
+# Statistics Project
+## Team Members: Thomas Semiz and Michelle Nunez
 
-#Tasks:
+# Tasks:
 Thomas:
 Descriptive Statistics functions
 1. Mean
