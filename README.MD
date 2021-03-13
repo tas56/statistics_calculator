@@ -13,11 +13,13 @@ Descriptive Statistics functions
 
 
 Michelle
+Descriptive Statistics functions
+1. Quartiles
+
 
 
 Need to do:
 Descriptive Statistics functions
-1. Quartiles
 2. Sample Correlation
 3. Population Correlation
 4. Z-Score

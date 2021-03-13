@@ -61,6 +61,21 @@ module.exports = class Descriptive {
     }
     // Calculates the Quartiles
 
+    static quartiles(arr){
+        //Quartiles separate a data set into four sections.
+        // The median is the second quartile Q2.
+        // It divides the ordered data set into higher and lower halves.
+        // The first quartile, Q1, is the median of the lower half not including Q2.
+        // The third quartile, Q3, is the median of the higher half not including Q2.
+        let arrLength = arr.length;
+        let Q1 = (.25 * arrLength+1);
+        let Q3 = (.75 * arrLength+1);
+        let Q2 = Q3 - Q1;
+        let quartiles = 'Lower Quartile: ' + Q1 + ' | Middle Quartile: ' + Q2 +
+            ' | Upper Quartile: ' + Q3;
+        return quartiles;
+    }
+
     // Calculates the skewness
     static skewness(arr){
         let mean = Descriptive.mean(arr);

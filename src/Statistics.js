@@ -33,6 +33,13 @@ class Statistics extends Calculator {
         this.observer.addCalculation(calculation);
         return calculation;
     }
+
+    static quartiles(arr){
+        let calculation = this.create(Descriptive.quartiles,{arr:arr});
+        this.addCalculation(calculation);
+        this.observer.addCalculation(calculation);
+        return calculation;
+    }
 }
 
 module.exports = Statistics;
