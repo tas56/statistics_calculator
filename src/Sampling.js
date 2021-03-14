@@ -13,11 +13,18 @@ const percentToZScore = new Map([
     [91, 1.7], [92, 1.75], [93, 1.81], [94, 1.88], [95, 1.96], [96, 2.05], [97, 2.17], [98, 2.33], [99, 2.57]
 ]);
 
-class Sampling{
+class Sampling {
     static simpleRandomSample(list, sampleSize, seed) {
         let simpleRandomSample = RandomGenerator.selectNItemsWithASeed(seed, list, sampleSize);
         return simpleRandomSample;
     }
-}
 
+
+    static getZScoreFromConfidence(confidence) {
+        let percent = Math.floor(confidence);
+        return percentToZScore.get(percent);
+    }
+
+
+}
 module.exports = Sampling;
