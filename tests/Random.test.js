@@ -21,3 +21,12 @@ test('generate random number with seed', () => {
     expect(randomNumber).toBeGreaterThan(1);
     expect(randomNumber).toBeLessThan(10);
 });
+
+test('Generate a list of N random numbers with a seed and between a range of numbers - Int', () => {
+    let size = 10;
+    let list1 = RandomGenerator.randomIntListWithSeed(100, 10, 100, size);
+    let list2 = RandomGenerator.randomIntListWithSeed(100, 10, 100, size);
+
+    expect(list1).toHaveLength(10);
+    expect(list1).toEqual(list2);
+});

@@ -27,6 +27,18 @@ class Random {
         return random;
     }
 
+    //Generate a list of N random numbers with a seed and between a range of numbers - Int
+    static randomIntListWithSeed(seed, min, max, len) {
+        let randomList = [];
+        seedrandom(seed, {global: true});
+
+        for (let i = 0; i < len; i++) {
+            randomList.push(Math.floor(Math.random() * (max - min) + min));
+        }
+        return randomList;
+    }
+
+
 
 }
 module.exports = Random;
