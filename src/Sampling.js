@@ -26,10 +26,10 @@ class Sampling {
         return percentToZScore.get(percent);
     }
 
-    static marginOfError(sampleList, confidence=95) {
+    static marginOfError(sampleList, confidence) {
         // given array and confidence level as a percent, return moe
-        let z = Sampling.getZFromConfidence(confidence); // 2-sided z-test of sample
-        let marginOfError = z * Descriptive.standardDeviation((sampleList)) / (sampleList.length ** 0.5);
+        let zscore = Sampling.getZScoreFromConfidence(confidence); // 2-sided z-test of sample
+        let marginOfError = zscore * Descriptive.standardDeviation((sampleList)) / (sampleList.length ** 0.5);
         return marginOfError;
     }
 

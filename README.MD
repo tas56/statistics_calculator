@@ -1,7 +1,7 @@
 # Statistics Project
 ## Team Members: Thomas Semiz and Michelle Nunez
 
-# Tasks:
+## Tasks:
 Thomas:
 Descriptive Statistics functions
 1. Mean
@@ -29,6 +29,8 @@ Random Generator function
 
 Population Sampling functions
 1. Simple random sampling
+2. Margin of Error
+
 
 
 
@@ -40,11 +42,10 @@ Descriptive Statistics functions
 Population Sampling functions
 1. Systematic sampling
 2. Confidence Interval For a Sample
-3. Margin of Error
-4. How to Find a Confidence Interval
-5. Cochran’s Sample Size Formula
-6. How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
-7. How to Find a Sample Size Given a Confidence Interval and Width (known population standard deviation)
+3. How to Find a Confidence Interval
+4. Cochran’s Sample Size Formula
+5. How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
+6. How to Find a Sample Size Given a Confidence Interval and Width (known population standard deviation)
 
 
 
