@@ -30,8 +30,8 @@ Random Generator function
 Population Sampling functions
 1. Simple random sampling
 2. Margin of Error
-
-
+3. How to Find a Confidence Interval
+4. Confidence Interval For a Sample
 
 
 
@@ -41,11 +41,9 @@ Descriptive Statistics functions
 
 Population Sampling functions
 1. Systematic sampling
-2. Confidence Interval For a Sample
-3. How to Find a Confidence Interval
-4. Cochran’s Sample Size Formula
-5. How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
-6. How to Find a Sample Size Given a Confidence Interval and Width (known population standard deviation)
+2. Cochran’s Sample Size Formula
+3. How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
+4. How to Find a Sample Size Given a Confidence Interval and Width (known population standard deviation)
 
 
 
