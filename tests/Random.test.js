@@ -10,6 +10,15 @@ test('generate random integer number', () => {
     expect(randomNumber).toBeLessThan(11);
 });
 
+test('generate random decimal number', () => {
+    let min = 1;
+    let max = 10;
+    let randomNumber = RandomGenerator.randomDecimalNoSeed(min,max);
+
+    expect(randomNumber).toBeGreaterThan(0);
+    expect(randomNumber).toBeLessThan(11);
+});
+
 test('generate random number with seed', () => {
     let min = 1;
     let max = 10;
