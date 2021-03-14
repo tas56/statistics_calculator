@@ -3,25 +3,12 @@ var seedrandom = require('seedrandom');
 
 class Random {
 
-    constructor (min, max) {
-        this.max = max;
-        this.min = min;
+    static randomIntNoSeed(min, max) {
+        let number = Math.random() * (max - min) + min;
+        return number;
     }
 
-    randomNoSeed(min, max) {
-        var number = Math.random() * (max - min + 1) + min;
-        var intArray;
-        var even = [0,2,4,6,8];
-        intArray = [Math.floor(Math.random() * (max - min + 1) + min)];
-        // This if statement makes the function be able to return both Integer and Decimal values.
-        if (even.includes(intArray[0]) == true){
-            return Math.floor(number);
-        } else {
-            return number;
-        }
-    }
-
-    randomSeed(min, max, seed){
+   static randomSeed(min, max, seed){
         var generator = seedrandom(seed);
         var random = generator() * (max - min) + min;
         return random;
