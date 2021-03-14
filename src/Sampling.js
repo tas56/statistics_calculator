@@ -1,4 +1,5 @@
 const RandomGenerator = require('../src/Random');
+const Descriptive = require('../src/Operations/Statistics/Descriptive');
 
 const percentToZScore = new Map([
     [1, 0.01], [2, 0.02], [3, 0.04], [4, 0.05], [5, 0.06], [6, 0.08], [7, 0.09], [8, 0.1], [9, 0.11], [10, 0.13],
@@ -23,6 +24,13 @@ class Sampling {
     static getZScoreFromConfidence(confidence) {
         let percent = Math.floor(confidence);
         return percentToZScore.get(percent);
+    }
+
+    static marginOfError(sampleList, confidence=95) {
+        // given array and confidence level as a percent, return moe
+        let z = Sampling.getZFromConfidence(confidence); // 2-sided z-test of sample
+        let marginOfError = z * Descriptive.standardDeviation((sampleList)) / (sampleList.length ** 0.5);
+        return marginOfError;
     }
 
 
