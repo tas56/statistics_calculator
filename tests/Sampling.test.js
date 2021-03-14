@@ -12,3 +12,8 @@ test('Simple random sampling', () => {
     expect(sampleList1).toHaveLength(Math.ceil(sampleSize));
     expect(sampleList1).toEqual(sampleList2);
 });
+
+test('Get z-score from confidence percent', () => {
+    expect(Sampling.getZScoreFromConfidence(80)).toEqual(1.28);
+    expect(Sampling.getZScoreFromConfidence(95)).toEqual(1.96);
+});
