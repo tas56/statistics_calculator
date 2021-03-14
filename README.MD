@@ -3,7 +3,8 @@
 
 ## Tasks:
 Thomas:
-Descriptive Statistics functions
+
+<br><b>Descriptive Statistics functions<b>
 1. Mean
 2. Median
 3. Mode
@@ -12,14 +13,16 @@ Descriptive Statistics functions
 6. Skewness
 
 
-Michelle
-Descriptive Statistics functions
+Michelle:
+
+<br><b>Descriptive Statistics functions</b>
+ Statistics functions
 1. Quartiles
 2. Sample Correlation
 3. Population Correlation
 4. Z-Score
 
-Random Generator function
+<br><b>Random Generator function</b>
 1. Generate a random number without a seed between a range of two numbers - Both Integer and Decimal
 2. Generate a list of N random numbers with a seed and between a range of numbers - Both Integer and Decimal
 3. Select a random item from a list
@@ -27,7 +30,7 @@ Random Generator function
 5. Select N number of items from a list without a seed
 6. Select N number of items from a list with a seed
 
-Population Sampling functions
+<br><b>Population Sampling functions</b>
 1. Simple random sampling
 2. Margin of Error
 3. How to Find a Confidence Interval
@@ -36,10 +39,11 @@ Population Sampling functions
 
 
 Need to do:
-Descriptive Statistics functions
+
+<br>Descriptive Statistics functions
 1. Mean Deviation / Mean Absolute Deviation
 
-Population Sampling functions
+<br>Population Sampling functions
 1. Systematic sampling
 2. Cochran’s Sample Size Formula
 3. How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
