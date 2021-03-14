@@ -29,6 +29,16 @@ test('generate random int with seed', () => {
     expect(randomNumber).toBeLessThan(10);
 });
 
+test('generate random decimal with seed', () => {
+    let min = 1;
+    let max = 10;
+    let seed = 5;
+    let randomNumber = RandomGenerator.randomIntWithSeed(min,max, seed);
+
+    expect(randomNumber).toBeGreaterThan(1);
+    expect(randomNumber).toBeLessThan(10);
+});
+
 test('Generate a list of N random numbers with a seed and between a range of numbers - Int', () => {
     let size = 10;
     let list1 = RandomGenerator.randomIntListWithSeed(100, 10, 100, size);
