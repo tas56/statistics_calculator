@@ -56,3 +56,12 @@ test('Select 3 items from a list without a seed', () => {
     expect(resultList).toHaveLength(3);
 });
 
+test('Select 3 items from a list with a seed', () => {
+    let size = 10;
+    let randomList = RandomGenerator.randomIntListWithSeed(100, 10, 100, size);
+    let resultList = RandomGenerator.selectNItemsWithASeed(100, randomList, 3);
+
+    expect(resultList).toHaveLength(3);
+});
+
+
