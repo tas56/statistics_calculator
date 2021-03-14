@@ -30,3 +30,12 @@ test('Generate a list of N random numbers with a seed and between a range of num
     expect(list1).toHaveLength(10);
     expect(list1).toEqual(list2);
 });
+
+test('Generate a list of N random numbers with a seed and between a range of numbers - Decimal', () => {
+    let size = 10;
+    let list1 = RandomGenerator.randomDecimalListWithSeed(100, 10, 100, size);
+    let list2 = RandomGenerator.randomDecimalListWithSeed(100, 10, 100, size);
+
+    expect(list1).toHaveLength(10);
+    expect(list1).toEqual(list2);
+});

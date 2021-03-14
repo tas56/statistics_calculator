@@ -38,6 +38,18 @@ class Random {
         return randomList;
     }
 
+    //Generate a list of N random numbers with a seed and between a range of numbers - Decimal
+    static randomDecimalListWithSeed(seed, min, max, n) {
+        let randomList = [];
+        seedrandom(seed, {global: true});
+
+        for (let i = 0; i < n; i++) {
+            randomList.push(Math.random() * (max - min) + min);
+        }
+        return randomList;
+    }
+
+
 
 
 }
