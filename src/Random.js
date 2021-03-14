@@ -19,6 +19,12 @@ class Random {
         return randomInt;
     }
 
+    static randomDecimalWithSeed(min, max, seed){
+        var generator = seedrandom(seed);
+        var randomDecimal = (generator() * (max - min) + min) / 100.00;
+        return randomDecimal;
+    }
+
     //Generate a list of N random numbers with a seed and between a range of numbers - Int
     static randomIntListWithSeed(seed, min, max, len) {
         let randomList = [];
