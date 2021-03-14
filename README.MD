@@ -14,7 +14,6 @@ Thomas:
 
 <br>Michelle:
 <br><b>Descriptive Statistics functions</b>
- Statistics functions
 1. Quartiles
 2. Sample Correlation
 3. Population Correlation
@@ -36,12 +35,12 @@ Thomas:
 
 
 
-Need to do:
+<br><b>Need to do</b>:
 
-<br>Descriptive Statistics functions
+<br><b>Descriptive Statistics functions</b>
 1. Mean Deviation / Mean Absolute Deviation
 
-<br>Population Sampling functions
+<br><b>Population Sampling functions</b>
 1. Systematic sampling
 2. Cochran’s Sample Size Formula
 3. How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
