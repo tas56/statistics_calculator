@@ -19,11 +19,11 @@ test('generate random decimal number', () => {
     expect(randomNumber).toBeLessThan(11);
 });
 
-test('generate random number with seed', () => {
+test('generate random int with seed', () => {
     let min = 1;
     let max = 10;
-    let seed = 6;
-    let randomNumber = RandomGenerator.randomSeed(min,max, seed);
+    let seed = 5;
+    let randomNumber = RandomGenerator.randomIntWithSeed(min,max, seed);
 
     expect(randomNumber).toBeGreaterThan(1);
     expect(randomNumber).toBeLessThan(10);
