@@ -49,6 +49,12 @@ class Random {
         return randomList;
     }
 
+    //Select random item from list
+    static selectRandomItem(list) {
+        let randomItem = Math.floor(Math.random() * list.length);
+        return list[randomItem];
+    }
+
 
 
 

@@ -39,3 +39,12 @@ test('Generate a list of N random numbers with a seed and between a range of num
     expect(list1).toHaveLength(10);
     expect(list1).toEqual(list2);
 });
+
+test('Select random item from list', () => {
+    let size = 10;
+    let list = RandomGenerator.randomIntListWithSeed(100, 10, 100, size);
+    let val = RandomGenerator.selectRandomItem(list);
+
+    expect(list).toContain(val);
+});
+
