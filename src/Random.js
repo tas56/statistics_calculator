@@ -13,13 +13,10 @@ class Random {
         return Math.floor(number) / 100.00;
     }
 
-
-    stat
-
-   static randomSeed(min, max, seed){
+   static randomIntWithSeed(min, max, seed){
         var generator = seedrandom(seed);
-        var random = generator() * (max - min) + min;
-        return random;
+        var randomInt = generator() * (max - min) + min;
+        return randomInt;
     }
 
     //Generate a list of N random numbers with a seed and between a range of numbers - Int
