@@ -65,6 +65,18 @@ class Random {
         return resultList;
     }
 
+    //Select N number of items from a list with a seed
+    static selectNItemsWithASeed(seed, list, n) {
+        seedrandom(seed, {global: true});
+        let resultList = [];
+        while (resultList.length < n) {
+            let item = Math.floor(Math.random() * list.length) + 0;
+            resultList.push(list[item]);
+        }
+        return resultList;
+    }
+
+
 
 
 

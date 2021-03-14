@@ -25,6 +25,7 @@ Random Generator function
 3. Select a random item from a list
 4. Set a seed and randomly select the same value from a list
 5. Select N number of items from a list without a seed
+6. Select N number of items from a list with a seed
 
 
 
@@ -44,7 +45,5 @@ Population Sampling functions
 7. How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
 8. How to Find a Sample Size Given a Confidence Interval and Width (known population standard deviation)
 
-Random Generator function
-6. Select N number of items from a list with a seed
 
 
