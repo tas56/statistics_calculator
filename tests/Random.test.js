@@ -1,10 +1,10 @@
 const expect = require("expect");
 const RandomGenerator = require('../src/Random.js');
 
-test('generate random number', () => {
+test('generate random integer number', () => {
     let min = 1;
     let max = 10;
-    let randomNumber = RandomGenerator.randomNoSeed(min,max);
+    let randomNumber = RandomGenerator.randomIntNoSeed(min,max);
 
     expect(randomNumber).toBeGreaterThan(0);
     expect(randomNumber).toBeLessThan(11);

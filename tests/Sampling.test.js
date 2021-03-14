@@ -2,6 +2,11 @@ const expect = require("expect");
 const RandomGenerator = require('../src/Random.js');
 const Sampling = require('../src/Sampling.js');
 
+test('bullshit temp test', ()=>{
+    let x =1;
+    expect(x).toBe(1);
+});
+
 /*
 test('Simple random sampling', () => {
     let size = 10;

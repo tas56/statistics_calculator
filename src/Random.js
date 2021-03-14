@@ -8,6 +8,8 @@ class Random {
         return number;
     }
 
+
+
    static randomSeed(min, max, seed){
         var generator = seedrandom(seed);
         var random = generator() * (max - min) + min;
