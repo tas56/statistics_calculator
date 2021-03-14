@@ -48,3 +48,11 @@ test('Select random item from list', () => {
     expect(list).toContain(val);
 });
 
+test('Select 3 items from a list without a seed', () => {
+    let size = 10;
+    let randomList = RandomGenerator.randomIntListWithSeed(100, 10, 100, size);
+    let resultList = RandomGenerator.selectNItems(randomList, 3);
+
+    expect(resultList).toHaveLength(3);
+});
+

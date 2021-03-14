@@ -23,6 +23,9 @@ Random Generator function
 1. Generate a random number without a seed between a range of two numbers - Both Integer and Decimal
 2. Generate a list of N random numbers with a seed and between a range of numbers - Both Integer and Decimal
 3. Select a random item from a list
+4. Set a seed and randomly select the same value from a list
+5. Select N number of items from a list without a seed
+
 
 
 
@@ -42,8 +45,6 @@ Population Sampling functions
 8. How to Find a Sample Size Given a Confidence Interval and Width (known population standard deviation)
 
 Random Generator function
-4. Set a seed and randomly.select the same value from a list
-5. Select N number of items from a list without a seed
 6. Select N number of items from a list with a seed
 
 
