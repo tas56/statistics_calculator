@@ -3,7 +3,6 @@
 
 ## Tasks:
 Thomas:
-
 <br><b>Descriptive Statistics functions</b>
 1. Mean
 2. Median
@@ -13,8 +12,7 @@ Thomas:
 6. Skewness
 
 
-Michelle:
-
+<br>Michelle:
 <br><b>Descriptive Statistics functions</b>
  Statistics functions
 1. Quartiles
