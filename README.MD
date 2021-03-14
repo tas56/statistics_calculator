@@ -4,7 +4,7 @@
 ## Tasks:
 Thomas:
 
-<br><b>Descriptive Statistics functions<b>
+<br><b>Descriptive Statistics functions</b>
 1. Mean
 2. Median
 3. Mode
