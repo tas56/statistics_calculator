@@ -33,7 +33,7 @@ class Sampling {
         return marginOfError;
     }
 
-    static findConfidenceInterval(sampleList, confidence) {
+    static findConfidenceInterval(sampleList, confidence=95) {
         //Get all values needed for the Confidence Interval formula
         if (sampleList.length === 0) {
             throw("ERROR: Empty list, cannot divide by 0");
@@ -41,7 +41,10 @@ class Sampling {
 
         let mean = Descriptive.mean(sampleList);
         let marginOfError = Sampling.marginOfError(sampleList, confidence);
-        return [mean - marginOfError, mean + marginOfError];
+        let conf1 = mean - marginOfError;
+        let conf2 = mean + marginOfError;
+        let confidenceIntervalList = [conf1, conf2];
+        return confidenceIntervalList;
     }
 
 

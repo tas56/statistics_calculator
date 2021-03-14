@@ -1,6 +1,7 @@
 const expect = require("expect");
 const RandomGenerator = require('../src/Random.js');
 const Sampling = require('../src/Sampling.js');
+const Descriptive = require('../src/Operations/Statistics/Descriptive');
 
 seed = 10;
 
@@ -27,4 +28,16 @@ test('Find margin of error', () => {
     let marginOfError = Sampling.marginOfError(sampleArr, confidence);
 
     expect(marginOfError).toBeGreaterThan(0);
+});
+
+test('Confidence interval', () => {
+    let size = 10;
+    let sampleList = RandomGenerator.randomIntListWithSeed(seed, -100, 100, size);
+    let confidence = Math.floor(RandomGenerator.randomIntWithSeed(seed, 50, 95) /  5) * 5;
+    let confidenceInterval = Sampling.findConfidenceInterval(sampleList, confidence);
+
+    let mean = Descriptive.mean(sampleList);
+    expect(confidenceInterval).toHaveLength(2);
+    expect(confidenceInterval[0]).toBeLessThan(mean);
+    expect(confidenceInterval[1]).toBeGreaterThan(mean);
 });
