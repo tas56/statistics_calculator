@@ -8,7 +8,13 @@ class Random {
         return number;
     }
 
+    static  randomDecimalNoSeed(min, max){
+        let number = Math.random() * (max - min) + min;
+        return Math.floor(number) / 100.00;
+    }
 
+
+    stat
 
    static randomSeed(min, max, seed){
         var generator = seedrandom(seed);
