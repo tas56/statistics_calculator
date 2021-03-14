@@ -21,6 +21,12 @@ class Random {
         }
     }
 
+    randomSeed(min, max, seed){
+        var generator = seedrandom(seed);
+        var random = generator() * (max - min) + min;
+        return random;
+    }
+
 
 }
 module.exports = Random;
