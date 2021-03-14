@@ -40,6 +40,27 @@ class Statistics extends Calculator {
         this.observer.addCalculation(calculation);
         return calculation;
     }
+
+    static zScore(arr){
+        let calculation = this.create(Descriptive.zScore(),{arr:arr},x);
+        this.addCalculation(calculation);
+        this.observer.addCalculation(calculation);
+        return calculation;
+    }
+
+    static sampleCorrelation(x,y){
+        let calculation = this.create(Descriptive.sampleCorrelation,{arr:x},{arr:y});
+        this.addCalculation(calculation);
+        this.observer.addCalculation(calculation);
+        return calculation;
+    }
+
+    static populationCorrelation(x,y){
+        let calculation = this.create(Descriptive.populationCorrelation,{arr:x},{arr:y});
+        this.addCalculation(calculation);
+        this.observer.addCalculation(calculation);
+        return calculation;
+    }
 }
 
 module.exports = Statistics;

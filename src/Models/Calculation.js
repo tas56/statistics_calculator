@@ -38,7 +38,6 @@ module.exports = class Calculation {
         return new Calculation(op, {a: a, b: b, arr: arr});
     }
 
-
     getResults() {
         if(this.arr != null){
             return this.op(this.arr)

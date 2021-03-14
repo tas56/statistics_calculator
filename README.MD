@@ -15,15 +15,15 @@ Descriptive Statistics functions
 Michelle
 Descriptive Statistics functions
 1. Quartiles
+2. Sample Correlation
+3. Population Correlation
+4. Z-Score
 
 
 
 Need to do:
 Descriptive Statistics functions
-2. Sample Correlation
-3. Population Correlation
-4. Z-Score
-5. Mean Deviation / Mean Absolute Deviation
+2. Mean Deviation / Mean Absolute Deviation
 
 Population Sampling functions
 1. Simple random sampling
