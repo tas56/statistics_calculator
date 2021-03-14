@@ -33,6 +33,17 @@ class Sampling {
         return marginOfError;
     }
 
+    static findConfidenceInterval(sampleList, confidence) {
+        //Get all values needed for the Confidence Interval formula
+        if (sampleList.length === 0) {
+            throw("ERROR: Empty list, cannot divide by 0");
+        }
+
+        let mean = Descriptive.mean(sampleList);
+        let marginOfError = Sampling.marginOfError(sampleList, confidence);
+        return [mean - marginOfError, mean + marginOfError];
+    }
+
 
 }
 module.exports = Sampling;
