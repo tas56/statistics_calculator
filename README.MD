@@ -1,6 +1,8 @@
 # Statistics Project
 ## Team Members: Thomas Semiz and Michelle Nunez
 
+Project Outline: [outline.docx](https://github.com/tas56/statistics_calculator/blob/master/Stats%20Project%20Outline.docx)
+
 ## Tasks:
 Thomas:
 <br><b>Descriptive Statistics functions</b>
