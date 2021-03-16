@@ -13,6 +13,7 @@ Thomas:
 5. Standard Deviation
 6. Skewness
 7. Mean Deviation / Mean Absolute Deviation
+8. Z-Score
 
 <br><b>Population Sampling functions</b>
 1. Cochran’s Sample Size Formula
@@ -26,7 +27,6 @@ Thomas:
 1. Quartiles
 2. Sample Correlation
 3. Population Correlation
-4. Z-Score
 
 <br><b>Random Generator function</b>
 1. Generate a random number without a seed between a range of two numbers - Both Integer and Decimal
