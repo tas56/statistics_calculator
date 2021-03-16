@@ -53,3 +53,15 @@ test('Confidence interval', () => {
 test('Cochrans sample size', () => {
     expect(Sampling.cochrans(95,5,.5,1000)).toBe(278);
 });
+
+test('Sample size with NO standard deviation', () => {
+    expect(Sampling.sampleSizeNoStdDev(95,10, 0.5)).toBeGreaterThan(0);
+});
+
+test('Sample size with standard deviation', () => {
+    let size = 10;
+    let sampleArr = RandomGenerator.randomIntListWithSeed(100, -100, 100, size);
+    let confidence = Math.floor(RandomGenerator.randomIntWithSeed(100, 50, 95) /  5) * 5;
+    let stdDev = Descriptive.standardDeviation(sampleArr);
+    expect(Sampling.sampleSizeWithStdDev(confidence,10, stdDev)).toBeGreaterThan(0);
+});

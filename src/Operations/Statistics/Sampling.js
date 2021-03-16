@@ -70,6 +70,11 @@ class Sampling {
     // }
 
     static cochrans(confidence, err, p=0.5, N=null){
+        // the cochran formula is n = (z^2 * p * q) / e^2
+        // where e is the desired precision, p is the proportion of population,
+        // and q is (1-p)
+        // the z value is the desired confidence level
+        // the second formula in check is used for small population sizes
         let z = Sampling.getZScoreFromConfidence(confidence);
         let n = z**2 * p * (1-p) / (err/100)**2;
         if (N !== null) {
@@ -78,9 +83,15 @@ class Sampling {
         return Math.ceil(n);
     }
 
+    static sampleSizeNoStdDev(confidence,width,p=0.5){
+        width = width / 2;
+        return Sampling.cochrans(confidence, width, p);
+    }
 
-
-
+    static sampleSizeWithStdDev(confidence, width, stdDev) {
+        let z = Sampling.getZScoreFromConfidence(confidence);
+        return (z * stdDev / width) ** 2;
+    }
 
 }
 module.exports = Sampling;
