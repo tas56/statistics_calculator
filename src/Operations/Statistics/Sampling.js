@@ -47,6 +47,28 @@ class Sampling {
         return confidenceIntervalList;
     }
 
+    static systematicSample(arrList, sampleSize) {
+        // perform 1-in-k sampling, beginning at random element in arrList
+        let sample = [];
+        let k = Math.floor(arrList.length / sampleSize);
+        let startIdx = RandomGenerator.randomIntNoSeed(0, arrList.length);
+        let i = startIdx;
+        while (i < arrList.length) {
+            if (sample.length < sampleSize) {
+                sample.push(arrList[i]);
+            }
+            i += k;
+        }
+        i -= arrList.length; // end of list, wrap around to beginning
+        for (let i = 0; i < startIdx; i += k) {
+            if (sample.length < sampleSize) {
+                sample.push(arrList[i]);
+            }
+            i += k;
+        }
+        return sample;
+    }
+
 
 
 
