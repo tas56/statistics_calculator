@@ -1,7 +1,6 @@
 const Calculator = require("../../Calculator");
 module.exports = class Descriptive extends Calculator{
 
-    // Calculates mean of an array
     static mean(arr){
         if (arr.length === 0) {
             throw("ERROR: empty array.");
@@ -12,7 +11,7 @@ module.exports = class Descriptive extends Calculator{
         }
         return (sum / arr.length);
     }
-    // Calculates median of an array
+
     static median(arr){
         let median = 0, count = arr.length;
         arr.sort();
@@ -24,7 +23,7 @@ module.exports = class Descriptive extends Calculator{
         }
         return median;
     }
-    // Calculates mode of an array
+
     static mode(arr){
         let freq = 0, freqNum, list = [];
 
@@ -44,7 +43,7 @@ module.exports = class Descriptive extends Calculator{
 
         return freqNum;
     }
-    // Calculate the variance of an array of numbers
+
     static variance(arr, sample=true) {
         let n = arr.length;
         if (sample) {
@@ -56,11 +55,11 @@ module.exports = class Descriptive extends Calculator{
             return arr.reduce((a, b) => a + (b-mean)**2, 0) / n;
         }
     }
-    // Calculates the Standard Deviation
+
     static standardDeviation(arr){
         return Math.sqrt(Descriptive.variance(arr));
     }
-    // Calculates the Quartiles
+
     static quartiles(arr){
         //Quartiles separate a data set into four sections.
         // The median is the second quartile Q2.
@@ -76,20 +75,19 @@ module.exports = class Descriptive extends Calculator{
         return quartiles;
     }
 
-    // Calculates the skewness
     static skewness(arr){
         let mean = Descriptive.mean(arr);
         let cubedDev = arr.reduce((a, b) => a + (b-mean) ** 3, 0);
         let stdDev = Descriptive.standardDeviation(arr, false);
         return (cubedDev / arr.length) / (stdDev ** 3);
     }
-    // Calculates the mean absolute deviation
     static meanAbsoluteDeviation(arr){
         let mean = Descriptive.mean(arr);
-        return arr.reduce((a,b) => a + Math.abs(b - mean), 0 / arr.length)
+        return Descriptive.mean(arr.map(function(num) {
+            return Math.abs(num - mean);
+        }));
     }
 
-    // Calculates Sample Correlation
     static sampleCorrelation(x,y){
         //measure the strength of a linear association between two variables,
         // where the value r = 1 means a perfect positive correlation and the value
@@ -129,7 +127,6 @@ module.exports = class Descriptive extends Calculator{
         return sampleCorrelation;
     }
 
-    // Calculates Population Correlation
     static populationCorrelation(x,y){
         //measure the strength of a linear association between two variables,
         // where the value r = 1 means a perfect positive correlation and the value
@@ -169,17 +166,8 @@ module.exports = class Descriptive extends Calculator{
         return sampleCorrelation;
     }
 
-   static zScore(arr, value) {
-        //z = (X - m)/std
-       //where z = Z-Score
-       //X = the value of the element
-       //m = the population mean
-       //std = the population standard deviation
-        let std = this.standardDeviation(arr);
-        let mean = this.mean(arr);
-        let zscore = this.quotient(this.difference(value,mean),std);
-
-        return zscore;
+   static zScore(score,mean,std) {
+       return (score - mean) / std;
     }
 
 
