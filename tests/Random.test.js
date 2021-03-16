@@ -1,5 +1,5 @@
 const expect = require("expect");
-const RandomGenerator = require('../src/Random.js');
+const RandomGenerator = require('../src/Operations/Statistics/Random.js');
 
 test('generate random integer number', () => {
     let min = 1;

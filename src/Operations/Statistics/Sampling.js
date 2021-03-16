@@ -1,5 +1,5 @@
-const RandomGenerator = require('../src/Random');
-const Descriptive = require('../src/Operations/Statistics/Descriptive');
+const RandomGenerator = require('./Random');
+const Descriptive = require('./Descriptive');
 
 const percentToZScore = new Map([
     [1, 0.01], [2, 0.02], [3, 0.04], [4, 0.05], [5, 0.06], [6, 0.08], [7, 0.09], [8, 0.1], [9, 0.11], [10, 0.13],

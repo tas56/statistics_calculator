@@ -1,4 +1,4 @@
-const Calculator = require('./calculator');
+const Calculator = require('../../Calculator');
 var seedrandom = require('seedrandom');
 
 class Random {

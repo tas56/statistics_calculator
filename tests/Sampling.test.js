@@ -1,6 +1,6 @@
 const expect = require("expect");
-const RandomGenerator = require('../src/Random.js');
-const Sampling = require('../src/Sampling.js');
+const RandomGenerator = require('../src/Operations/Statistics/Random.js');
+const Sampling = require('../src/Operations/Statistics/Sampling.js');
 const Descriptive = require('../src/Operations/Statistics/Descriptive');
 
 seed = 10;
