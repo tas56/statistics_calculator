@@ -47,27 +47,37 @@ class Sampling {
         return confidenceIntervalList;
     }
 
-    static systematicSample(arrList, sampleSize) {
-        // perform 1-in-k sampling, beginning at random element in arrList
-        let sample = [];
-        let k = Math.floor(arrList.length / sampleSize);
-        let startIdx = RandomGenerator.randomIntNoSeed(0, arrList.length);
-        let i = startIdx;
-        while (i < arrList.length) {
-            if (sample.length < sampleSize) {
-                sample.push(arrList[i]);
-            }
-            i += k;
+    // static systematicSample(arrList, sampleSize) {
+    //     // perform 1-in-k sampling, beginning at random element in arrList
+    //     let sample = [];
+    //     let k = Math.floor(arrList.length / sampleSize);
+    //     let startIdx = RandomGenerator.randomIntNoSeed(0, arrList.length);
+    //     let i = startIdx;
+    //     while (i < arrList.length) {
+    //         if (sample.length < sampleSize) {
+    //             sample.push(arrList[i]);
+    //         }
+    //         i += k;
+    //     }
+    //     i -= arrList.length; // end of list, wrap around to beginning
+    //     for (let i = 0; i < startIdx; i += k) {
+    //         if (sample.length < sampleSize) {
+    //             sample.push(arrList[i]);
+    //         }
+    //         i += k;
+    //     }
+    //     return sample;
+    // }
+
+    static cochrans(confidence, err, p=0.5, N=null){
+        let z = Sampling.getZScoreFromConfidence(confidence);
+        let n = z**2 * p * (1-p) / (err/100)**2;
+        if (N !== null) {
+            n = n / (1 + (n - 1)/N);
         }
-        i -= arrList.length; // end of list, wrap around to beginning
-        for (let i = 0; i < startIdx; i += k) {
-            if (sample.length < sampleSize) {
-                sample.push(arrList[i]);
-            }
-            i += k;
-        }
-        return sample;
+        return Math.ceil(n);
     }
+
 
 
 

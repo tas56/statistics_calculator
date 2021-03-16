@@ -42,10 +42,14 @@ test('Confidence interval', () => {
     expect(confidenceInterval[1]).toBeGreaterThan(mean);
 });
 
-test('Systematic Sampling', () => {
-    let size = 10;
-    let arrList = RandomGenerator.randomIntListWithSeed(seed, 10, 100, size);
-    let sampleSize = RandomGenerator.randomIntWithSeed(seed,1, size);
-    let sampleArr = Sampling.systematicSample(arrList, sampleSize);
-    expect(sampleArr.length).toBe(sampleSize);
+// test('Systematic Sampling', () => {
+//     let size = 10;
+//     let arrList = RandomGenerator.randomIntListWithSeed(seed, 10, 100, size);
+//     let sampleSize = RandomGenerator.randomIntWithSeed(seed,1, size);
+//     let sampleArr = Sampling.systematicSample(arrList, sampleSize);
+//     expect(sampleArr.length).toBe(sampleSize);
+// });
+
+test('Cochrans sample size', () => {
+    expect(Sampling.cochrans(95,5,.5,1000)).toBe(278);
 });
