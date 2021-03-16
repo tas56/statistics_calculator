@@ -48,5 +48,8 @@ Thomas:
 3. How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
 4. How to Find a Sample Size Given a Confidence Interval and Width (known population standard deviation)
 
+[![Coverage Status](https://coveralls.io/repos/github/tas56/statistics_calculator/badge.svg?branch=master)](https://coveralls.io/github/tas56/statistics_calculator?branch=master)
+[![Build Status](https://travis-ci.org/tas56/statistics_calculator.svg?branch=master)](https://travis-ci.org/tas56/statistics_calculator)
+
 
 
