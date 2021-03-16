@@ -36,19 +36,25 @@ class Statistics extends Calculator {
     }
 
     static zScore(arr){
-        let calculation = this.create(Descriptive.zScore(),{arr:arr},x);
+        let calculation = this.create(Descriptive.zScore,{arr:arr},x);
+        this.addCalculation(calculation);
+        return calculation;
+    }
+
+    static meanAbsoluteDeviation(arr){
+        let calculation = this.create(Descriptive.meanAbsoluteDeviation,{arr:arr});
         this.addCalculation(calculation);
         return calculation;
     }
 
     static sampleCorrelation(x,y){
-        let calculation = this.create(Descriptive.sampleCorrelation,{arr:x},{arr:y});
+        let calculation = this.create(Descriptive.sampleCorrelation,{a:x},{b:y});
         this.addCalculation(calculation);
         return calculation;
     }
 
     static populationCorrelation(x,y){
-        let calculation = this.create(Descriptive.populationCorrelation,{arr:x},{arr:y});
+        let calculation = this.create(Descriptive.populationCorrelation,{a:x},{b:y});
         this.addCalculation(calculation);
         return calculation;
     }

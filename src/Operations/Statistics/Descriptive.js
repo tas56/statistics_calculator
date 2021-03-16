@@ -61,7 +61,6 @@ module.exports = class Descriptive extends Calculator{
         return Math.sqrt(Descriptive.variance(arr));
     }
     // Calculates the Quartiles
-
     static quartiles(arr){
         //Quartiles separate a data set into four sections.
         // The median is the second quartile Q2.
@@ -83,6 +82,11 @@ module.exports = class Descriptive extends Calculator{
         let cubedDev = arr.reduce((a, b) => a + (b-mean) ** 3, 0);
         let stdDev = Descriptive.standardDeviation(arr, false);
         return (cubedDev / arr.length) / (stdDev ** 3);
+    }
+    // Calculates the mean absolute deviation
+    static meanAbsoluteDeviation(arr){
+        let mean = Descriptive.mean(arr);
+        return arr.reduce((a,b) => a + Math.abs(b - mean), 0 / arr.length)
     }
 
     // Calculates Sample Correlation
