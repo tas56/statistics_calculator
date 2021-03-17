@@ -9,32 +9,32 @@ class Calculator extends Calculation {
         Calculator.calculations.push(calculation);
     }
     static sum(a, b){
-        let calculation = this.create(Op.sum,{a:a,b:b});
+        let calculation = this.create(Op.sum,a,b);
         this.addCalculation(calculation);
         return calculation;
     }
     static difference(a, b){
-        let calculation = this.create(Op.difference,{a:a,b:b});
+        let calculation = this.create(Op.difference,a,b);
         this.addCalculation(calculation);
         return calculation;
     }
     static product(a, b){
-        let calculation = this.create(Op.product,{a:a,b:b});
+        let calculation = this.create(Op.product,a,b);
         this.addCalculation(calculation);
         return calculation;
     }
     static quotient(a, b){
-        let calculation = this.create(Op.quotient,{a:a,b:b});
+        let calculation = this.create(Op.quotient,a,b);
         this.addCalculation(calculation);
         return calculation;
     }
     static exponentiation(a, b){
-        let calculation = this.create(Op.power,{a:a,b:b});
+        let calculation = this.create(Op.power,a,b);
         this.addCalculation(calculation);
         return calculation;
     }
     static root(a, b){
-        let calculation = this.create(Op.root,{a:a,b:b});
+        let calculation = this.create(Op.root,a,b);
         this.addCalculation(calculation);
         return calculation;
     }

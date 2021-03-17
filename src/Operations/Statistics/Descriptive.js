@@ -81,6 +81,7 @@ module.exports = class Descriptive extends Calculator{
         let stdDev = Descriptive.standardDeviation(arr, false);
         return (cubedDev / arr.length) / (stdDev ** 3);
     }
+
     static meanAbsoluteDeviation(arr){
         let mean = Descriptive.mean(arr);
         return Descriptive.mean(arr.map(function(num) {

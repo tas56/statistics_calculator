@@ -1,22 +1,24 @@
 module.exports = class Calculation {
 
-    constructor(op, {a, b, arr} = { }) {
+    constructor(op, a=null, b=null, c=null, d=null) {
         this.op = op;
         this.a = a;
         this.b = b;
-        this.arr = arr;
+        this.c = c;
+        this.d = d;
     }
 
-    static create(op, {a, b, arr} = { }) {
-        return new Calculation(op, {a: a, b: b, arr: arr});
+    static create(op, a, b, c, d) {
+        return new Calculation(op, a, b, c, d);
     }
 
     getResults() {
-        if(this.arr != null){
-            return this.op(this.arr)
-        } else if (this.a && this.b != null){
-            return this.op(this.a,this.b);
-        } else throw("ERROR: calculation cannot be performed, must pass 2 numbers or an array.");
+
+        return this.op(this.a, this.b, this.c, this.d);
+
     }
 
+
 }
+
+
