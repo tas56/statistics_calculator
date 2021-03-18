@@ -1,5 +1,6 @@
 const Calculator = require('./Calculator');
 const Descriptive = require('./Operations/Statistics/Descriptive');
+const Sampling = require('./Operations/Statistics/Sampling');
 
 class Statistics extends Calculator {
 
@@ -68,7 +69,48 @@ class Statistics extends Calculator {
     }
     // End Descriptive statistics
 
-    // Begin Sampling statistic
+    // Begin Sampling statistics
+    static simpleRandomSample(list,sampleSize,seed){
+        let calculation = this.create(Sampling.simpleRandomSample,list,sampleSize,seed);
+        this.addCalculation(calculation);
+        return calculation;
+    }
+
+    static getZScoreFromConfidence(confidence){
+        let calculation = this.create(Sampling.getZScoreFromConfidence,confidence);
+        this.addCalculation(calculation);
+        return calculation;
+    }
+
+    static marginOfError(sampleList, confidence){
+        let calculation = this.create(Sampling.marginOfError,sampleList,confidence);
+        this.addCalculation(calculation);
+        return calculation;
+    }
+
+    static findConfidenceInterval(sampleList,confidence){
+        let calculation = this.create(Sampling.findConfidenceInterval,sampleList,confidence);
+        this.addCalculation(calculation);
+        return calculation;
+    }
+
+    static cochranFormula(confidence, err, p, N){
+        let calculation = this.create(Sampling.cochrans,confidence,err,p,N);
+        this.addCalculation(calculation);
+        return calculation;
+    }
+
+    static sampleSizeNoStdDev(confidence,width,p){
+        let calculation = this.create(Sampling.sampleSizeNoStdDev,confidence,width,p);
+        this.addCalculation(calculation);
+        return calculation;
+    }
+
+    static sampleSizeWithStdDev(confidence, width, stdDev){
+        let calculation = this.create(Sampling.sampleSizeWithStdDev,confidence,width,stdDev);
+        this.addCalculation(calculation);
+        return calculation;
+    }
 
     // end sampling statistics
 

@@ -1,4 +1,10 @@
 const Statistics = require('../src/Statistics');
+const expect = require("expect");
+const RandomGenerator = require('../src/Operations/Statistics/Random.js');
+const Sampling = require('../src/Operations/Statistics/Sampling.js');
+const Descriptive = require("../src/Operations/Statistics/Descriptive");
+
+// TESTS FOR DESCRIPTIVE
 
 test('Statistics mean function', () => {
     let arr = [1,2,3,4,5];
@@ -47,4 +53,62 @@ test('Statistics mean absolute deviation function', () => {
 test('Statistics z-score function', () => {
     expect(Statistics.zScore(5,3,2).getResults()).toBe(1);
 });
+
+// TESTS FOR SAMPLING
+seed = 10;
+
+test('Statistics Simple random sampling', () => {
+    let size = 10;
+    let randomList = RandomGenerator.randomIntListWithSeed(10, 10, 100, size);
+    let sampleSize = RandomGenerator.randomIntWithSeed(1, 10, (size));
+    let sampleList1 = Statistics.simpleRandomSample(randomList, sampleSize, 10).getResults();
+    let sampleList2 = Statistics.simpleRandomSample(randomList, sampleSize, 10).getResults();
+
+    expect(sampleList1).toHaveLength(Math.ceil(sampleSize));
+    expect(sampleList1).toEqual(sampleList2);
+});
+
+test('Statistics Get z-score from confidence percent', () => {
+    expect(Statistics.getZScoreFromConfidence(80).getResults()).toEqual(1.28);
+    expect(Statistics.getZScoreFromConfidence(95).getResults()).toEqual(1.96);
+});
+
+test('Statistics Find margin of error', () => {
+    let size = 10;
+    let sampleArr = RandomGenerator.randomIntListWithSeed(seed, -100, 100, size);
+    let confidence = Math.floor(RandomGenerator.randomIntWithSeed(seed, 50, 95) /  5) * 5;
+    let marginOfError = Statistics.marginOfError(sampleArr, confidence);
+
+    expect(marginOfError.getResults()).toBeGreaterThan(0);
+});
+
+test('Statistics Confidence interval', () => {
+    let size = 10;
+    let sampleList = RandomGenerator.randomIntListWithSeed(seed, -100, 100, size);
+    let confidence = Math.floor(RandomGenerator.randomIntWithSeed(seed, 50, 95) /  5) * 5;
+    let confidenceInterval = Statistics.findConfidenceInterval(sampleList, confidence).getResults();
+
+    let mean = Descriptive.mean(sampleList);
+    expect(confidenceInterval).toHaveLength(2);
+    expect(confidenceInterval[0]).toBeLessThan(mean);
+    expect(confidenceInterval[1]).toBeGreaterThan(mean);
+});
+
+test('Statistics Cochrans sample size', () => {
+    expect(Statistics.cochranFormula(95,5,.5,1000).getResults()).toBe(278);
+});
+
+test('Statistics Sample size with NO standard deviation', () => {
+    expect(Statistics.sampleSizeNoStdDev(95,10, 0.5).getResults()).toBeGreaterThan(0);
+});
+
+test('Statistics Sample size with standard deviation', () => {
+    let size = 10;
+    let sampleArr = RandomGenerator.randomIntListWithSeed(100, -100, 100, size);
+    let confidence = Math.floor(RandomGenerator.randomIntWithSeed(100, 50, 95) /  5) * 5;
+    let stdDev = Descriptive.standardDeviation(sampleArr);
+    expect(Statistics.sampleSizeWithStdDev(confidence,10, stdDev).getResults()).toBeGreaterThan(0);
+});
+
+
 
