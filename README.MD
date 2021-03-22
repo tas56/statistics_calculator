@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tas56/statistics_calculator.svg?branch=master)](https://travis-ci.org/tas56/statistics_calculator)
+
 # Statistics Project
 ## Team Members: Thomas Semiz and Michelle Nunez
 
@@ -41,10 +43,3 @@ Thomas:
 2. Margin of Error
 3. How to Find a Confidence Interval
 4. Confidence Interval For a Sample
-
-
-[![Coverage Status](https://coveralls.io/repos/github/tas56/statistics_calculator/badge.svg?branch=master)](https://coveralls.io/github/tas56/statistics_calculator?branch=master)
-[![Build Status](https://travis-ci.org/tas56/statistics_calculator.svg?branch=master)](https://travis-ci.org/tas56/statistics_calculator)
-
-
-
